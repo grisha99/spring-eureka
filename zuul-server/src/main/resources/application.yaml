@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: zuul-proxy
+server:
+  port: 55555
+  servlet:
+    context-path: /zuul
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+zuul:
+  routes:
+    product-service: /products/**
+  sensitive-headers: Cookie, Set-Cookie
+
