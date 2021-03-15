@@ -2,9 +2,12 @@ spring:
   application:
     name: zuul-proxy
 server:
-  port: 55555
+  port: 5555
   servlet:
     context-path: /zuul
+
+
+
 eureka:
   client:
     register-with-eureka: true
@@ -14,5 +17,5 @@ eureka:
 zuul:
   routes:
     product-service: /products/**
-  sensitive-headers: Cookie, Set-Cookie
+#  sensitive-headers: Cookie, Set-Cookie
 
